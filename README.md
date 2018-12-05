@@ -5,7 +5,7 @@ Usuarios Red de Innovación y Emprendimiento
 En
 - Jairo @jairolan
 - Anahi @anahicamash
--Kevin @Kevinhdezh  
+- Kevin @Kevinhdezh  
 -
 -
 
