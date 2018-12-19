@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myapp</title>
+    <title>RIE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <style>
       body {
@@ -15,27 +14,36 @@
         font-size: 18px;
       }
     </style>
-     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
   </head>
 
   <body> 
+     <nav class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" href="/">RIE</a>
+        </div>    
+         <ul class="nav navbar-nav">
+        <p class="navbar-text pull-right">
+            <% if user_signed_in? %>
+              Logged in as <strong><%= current_user.email %></strong>.
+              <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+              <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+            <% else %>
+              <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
+              <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
+            <% end %>
+          </p>
+        </ul>
+    </nav>
 
-    <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
-      <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-      <%= link_to "Cerrar Sesion", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-    <% else %>
-      <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-      <%= link_to "Entrar", new_user_session_path, :class => 'navbar-link'  %>
-    <% end %>
-
-      <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
   <div class="container-fluid" align="center">
+    <p> </p>
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
     <%= yield %>
   </div>
   </body>
