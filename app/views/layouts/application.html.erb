@@ -17,10 +17,14 @@
    
   </head>
 
+
+
   <body> 
      <nav class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
         <div class="container-responsive">
-          <a class="navbar-brand" href="/">RIE</a>
+          <a href="/" class="thumbnail" >
+            <%= image_tag("logo_b.png", :style => 'width: 100px; margin-left: 100px; ' ,:alt => "rss feed") %>
+          </a>
         </div>    
          <ul class="nav navbar-nav">
         <p class="navbar-text pull-right">
@@ -36,7 +40,7 @@
         </ul>
     </nav>
 
-  <div class="container-responsive">
+  <div class="container" class="responsive">
     <p> </p>
       <% if notice %>
         <p class="alert alert-success"><%= notice %></p>
@@ -45,6 +49,7 @@
         <p class="alert alert-danger"><%= alert %></p>
       <% end %>
     <%= yield %>
+   
   </div>
   </body>
 </html>
