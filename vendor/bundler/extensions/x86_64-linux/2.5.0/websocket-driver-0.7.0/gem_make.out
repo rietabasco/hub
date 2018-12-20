@@ -1,0 +1,15 @@
+current directory: /home/jairo/RIE/vendor/bundler/gems/websocket-driver-0.7.0/ext/websocket-driver
+/home/jairo/.rvm/rubies/ruby-2.5.1/bin/ruby -r ./siteconf20181219-6886-1j8be7c.rb extconf.rb
+creating Makefile
+
+current directory: /home/jairo/RIE/vendor/bundler/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/jairo/RIE/vendor/bundler/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/jairo/RIE/vendor/bundler/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20181219-6886-1qzil2y
